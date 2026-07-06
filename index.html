@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Pembayaran - RAFFSTR</title>
+    <style>
+        :root {
+            --primary-purple: #6c5ce7;
+            --light-purple: #a55eea;
+            --bg-purple: #f3f0ff;
+            --text-dark: #2d3436;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-purple);
+            color: var(--text-dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .payment-card {
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(108, 92, 231, 0.15);
+            width: 100%;
+            max-width: 400px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid rgba(108, 92, 231, 0.1);
+        }
+
+        .header {
+            margin-bottom: 25px;
+        }
+
+        .header h2 {
+            color: var(--primary-purple);
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 14px;
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+
+        .payment-method {
+            background-color: #fafafa;
+            border: 2px solid #efefef;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .payment-method:hover {
+            border-color: var(--primary-purple);
+            background-color: #fcfbff;
+        }
+
+        .method-title {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #95a5a6;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .dana-logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #008ced; /* Warna khas DANA */
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .dana-logo span {
+            color: var(--primary-purple); /* Sentuhan ungu */
+        }
+
+        .number-box {
+            background: #ffffff;
+            border: 1px dashed var(--primary-purple);
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--primary-purple);
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .number-box:active {
+            transform: scale(0.98);
+        }
+
+        .an-text {
+            font-size: 13px;
+            color: #7f8c8d;
+        }
+
+        .btn-confirm {
+            display: block;
+            width: 100%;
+            background-color: var(--primary-purple);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 14px;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.3);
+        }
+
+        .btn-confirm:hover {
+            background-color: var(--light-purple);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(108, 92, 231, 0.4);
+        }
+
+        .footer-note {
+            font-size: 12px;
+            color: #bdc3c7;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="payment-card">
+    <div class="header">
+        <h2>Metode Pembayaran</h2>
+        <p>Silakan selesaikan pembayaran Anda di bawah ini</p>
+    </div>
+
+    <div class="payment-method">
+        <div class="method-title">Transfer Via</div>
+        <div class="dana-logo">DANA<span>.</span></div>
+        
+        <div class="number-box" onclick="salinNomor()">
+            083867468118
+        </div>
+        <div class="an-text">A/N: lip</div>
+    </div>
+
+    <a href="https://wa.me/6283867468118?text=Halo%20Raffstr,%20saya%20sudah%20melakukan%20pembayaran%20via%20DANA.%20Berikut%20bukti%20transfernya:" target="_blank" class="btn-confirm">
+        Kirim Bukti Transfer (WA)
+    </a>
+
+    <div class="footer-note">
+        Pastikan nominal sesuai sebelum mengirim bukti transfer.
+    </div>
+</div>
+
+<script>
+    function salinNomor() {
+        // Menyalin nomor secara otomatis saat diklik
+        navigator.clipboard.writeText("083867468118");
+        alert("Nomor DANA berhasil disalin: 083867468118");
+    }
+</script>
+
+</body>
+</html>
+
